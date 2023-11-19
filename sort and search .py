@@ -28,3 +28,35 @@ def binary_search(target,liste):
             upper_bound = middle
 #print(binary_search(12,list))
 
+
+
+
+
+def merge_two_lists(long_list,short_list):
+    i = j = 0
+    merged_list = []
+    while i < len(long_list) and  j < len(short_list):
+        if long_list[i] < short_list[j]:
+                merged_list.append(long_list[i])
+                i += 1
+        else:
+            merged_list.append(short_list[j])
+            j += 1
+    merged_list += long_list[i:]
+    merged_list += short_list[j:]
+
+    return merged_list
+            
+    
+#print(merge_two_lists2(l2,l1))
+
+def merge_and_sort(l):
+    if len(l) <= 1:
+        return l
+    middle = len(l)//2
+    left = merge_and_sort(l[:middle])
+    right = merge_and_sort((l[middle:]))
+    return merge_two_lists(left,right)
+    
+#print(merge_and_sort(l3))
+
