@@ -57,6 +57,6 @@ def merge_and_sort(l):
     left = merge_and_sort(l[:middle])
     right = merge_and_sort((l[middle:]))
     return merge_two_lists(left,right)
-    
+   
 #print(merge_and_sort(list))
 
