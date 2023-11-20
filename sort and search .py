@@ -30,8 +30,6 @@ def binary_search(target,liste):
 
 
 
-
-
 def merge_two_lists(long_list,short_list):
     i = j = 0
     merged_list = []
@@ -47,8 +45,7 @@ def merge_two_lists(long_list,short_list):
 
     return merged_list
             
-    
-#print(merge_two_lists2(l2,l1))
+#print(merge_two_lists(l2,l1))
 
 def merge_and_sort(l):
     if len(l) <= 1:
@@ -59,4 +56,21 @@ def merge_and_sort(l):
     return merge_two_lists(left,right)
    
 #print(merge_and_sort(list))
+
+
+def quick_sort(l):
+    if len(l) <= 1:
+        return l
+    smaller =[]
+    bigger = []
+    pivot = l[0]
+    for i in range (len(l)):
+        if l[i] <pivot:
+            smaller.append(l[i])
+        elif l[i] >pivot:
+            bigger.append(l[i])
+    
+    return quick_sort(smaller)+[pivot]+ quick_sort(bigger)
+#print(quick_sort(list))
+
 
