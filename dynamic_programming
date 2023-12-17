@@ -1,0 +1,19 @@
+def dynamic_fib(n):
+    memo = [0]*(n+1)
+    memo[0],memo[1] = 0,1
+    for i in range(2,n+1):
+        memo[i] = memo[i-1]+memo[i-2]
+    return memo[i]
+#print(dynamic_fib(70000))
+
+def gridTraveler(m,n,results={}):
+    key = str(m) +","+ str(n)
+    if n==0 or m==0:
+        return 0
+    elif n== 1 and m ==1:
+        return 1
+    elif key in results.keys():
+        return results[key]
+    
+    results[key] = gridTraveler(m-1,n,results) + gridTraveler(m,n-1,results)
+    return results[key]
