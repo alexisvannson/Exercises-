@@ -58,7 +58,7 @@ def merge_and_sort(l):
 #print(merge_and_sort(list))
 
 
-def quick_sort(l):
+def quick_sort1(l): # not in place
     if len(l) <= 1:
         return l
     smaller =[]
@@ -70,7 +70,35 @@ def quick_sort(l):
         elif l[i] >pivot:
             bigger.append(l[i])
     
-    return quick_sort(smaller)+[pivot]+ quick_sort(bigger)
+    return quick_sort1(smaller)+[pivot]+ quick_sort1(bigger)
 #print(quick_sort(list))
+
+
+
+def swap(l,i,j):
+    a = l[i]
+    l[i] = l[j]
+    l[j] = a
+    return l
+
+def partition(l,lo,hi):
+    pivot = l[lo]
+    i = lo+1
+    for j in range(i,hi+1):
+        if l[j] < pivot:
+            swap(l,i,j)
+            i +=1
+    swap(l,lo,i-1)
+    return i-1
+
+
+
+def quicksort(l,lo,hi):
+    if lo< hi:
+        pivot = partition(l,lo,hi)
+        quicksort(l,lo,pivot)
+        quicksort(l,pivot+1,hi)
+    return l
+
 
 
