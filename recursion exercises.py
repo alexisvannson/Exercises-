@@ -73,12 +73,6 @@ def number_of_rabbits(n):
 
 #print(number_of_rabbits(9))
 
-
-"""Find the number of different ways to climb an n-stair staircase if each step is either or two stairs.
-For example, a 3-stair staircase can be climbed three ways: 1-1-1, 1-2, and 2-1."""
-
-
-
 def suba(sub,string):
     if len(sub) == 0:
         return True
