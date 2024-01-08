@@ -5,7 +5,7 @@ try:
     amount = float(sys.argv[1])
     data = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json")
     sorted_data = data.json()
-    #sorted_data1 = json.dumps(data.json(), indent=2)
+    #sorted_data1 = json.dumps(data.json(), indent=2) makes it easier to read
     bitcoin_price = float(sorted_data["bpi"]["USD"]["rate"].replace(',', ''))
 except IndexError:
   sys.exit("Missing command-line argument")
